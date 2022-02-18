@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/drawable-v24/border_with_small_rounds.xml" value="0.22552083333333334" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/drawable-v24/bottom_button_background.xml" value="0.103125" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/drawable/border_with_small_rounds_transparent_background.xml" value="0.22552083333333334" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/drawable/side_nav_bar.xml" value="0.22552083333333334" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/activity_login.xml" value="0.10208333333333333" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/activity_register.xml" value="0.209375" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/activity_splash_screen.xml" value="0.1953125" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/app_bar_main.xml" value="0.209375" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/content_login.xml" value="0.2" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/content_main.xml" value="0.209375" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/content_registration.xml" value="0.4" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/just_text_toolbar.xml" value="0.209375" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/loading_bar_layout.xml" value="0.1" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/nav_header_main.xml" value="0.209375" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/submit_button_bottom_sheet.xml" value="0.209375" />
+        <entry key="..\:/Users/Diliways/Downloads/ForexTopUp/app/src/main/res/layout/content_main.xml" value="0.22864583333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

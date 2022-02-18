@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="60dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:background="@drawable/border_with_small_rounds_transparent_background"
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+                <RelativeLayout
+                    android:id="@+id/registration_header_image_layout"
+                    android:background="@drawable/border_with_small_rounds_transparent_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:id="@+id/registration_header_image"
+                        android:src="@drawable/marjian"
+                        android:scaleType="fitXY"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/login_option_layout"
+                    android:layout_below="@+id/registration_header_image_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/register_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Already a Member?"
+                        />
+                    <TextView
+                        android:clickable="true"
+                        android:fontFamily="@font/averta_bold"
+                        android:textColor="@color/reset_pin_text_color"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/register_label"
+                        android:id="@+id/access_login_screen_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Login here"
+                        />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/first_name_label"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_below="@+id/login_option_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First Name"
+                    />
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/first_name_label"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/border_with_small_rounds"
+                    android:id="@+id/first_name_edit_text_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+
+                    <EditText
+                        android:inputType="text"
+                        android:id="@+id/input_first_name"
+                        android:backgroundTint="@color/color_faint_white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="First Name"
+                        android:textAppearance="@style/hint__"
+                        android:textColorHint="@color/global_hint_text_"
+                        />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/last_name_label"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_below="@+id/first_name_edit_text_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name"
+                    />
+
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/last_name_label"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/border_with_small_rounds"
+                    android:id="@+id/last_name_edit_text_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+
+                    <EditText
+                        android:inputType="text"
+                        android:id="@+id/input_last_name"
+                        android:backgroundTint="@color/color_faint_white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="School Name"
+                        android:textAppearance="@style/hint__"
+                        android:textColorHint="@color/global_hint_text_"
+                        />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/binary_account_label"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_below="@+id/last_name_edit_text_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Binary Account"
+                    />
+
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/binary_account_label"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/border_with_small_rounds"
+                    android:id="@+id/binary_account_edit_text_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+
+                    <EditText
+                        android:inputType="text"
+                        android:id="@+id/input_binary_account"
+                        android:backgroundTint="@color/color_faint_white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="BInary Account"
+                        android:textAppearance="@style/hint__"
+                        android:textColorHint="@color/global_hint_text_"
+                        />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/_msisdn_label"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_below="@+id/binary_account_edit_text_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number"
+                    />
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/_msisdn_label"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border_with_small_rounds"
+                    android:id="@+id/_msisdn_editext_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+
+                    <EditText
+                        android:id="@+id/input_msisdn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:backgroundTint="@color/color_faint_white"
+                        android:hint="Phone number"
+                        android:inputType="number"
+                        android:textAppearance="@style/hint__"
+                        android:textColorHint="@color/global_hint_text_" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/password_label"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_below="@+id/_msisdn_editext_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    />
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/password_label"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/border_with_small_rounds"
+                    android:id="@+id/first_password_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+
+                    <EditText
+                        android:inputType="text"
+                        android:id="@+id/input_password"
+                        android:backgroundTint="@color/color_faint_white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:textAppearance="@style/hint__"
+                        android:textColorHint="@color/global_hint_text_"
+                        />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/confirm_password_label"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_below="@+id/first_password_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm Password"
+                    />
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/confirm_password_label"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/border_with_small_rounds"
+                    android:id="@+id/second_password_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+
+                    <EditText
+                        android:inputType="text"
+                        android:id="@+id/input_second_password"
+                        android:backgroundTint="@color/color_faint_white"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Confirm Password"
+                        android:textAppearance="@style/hint__"
+                        android:textColorHint="@color/global_hint_text_"
+                        />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_below="@+id/second_password_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="70dp"
+                    android:text=""
+                    />
+
+
+
+
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+        <include layout="@layout/submit_button_bottom_sheet" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

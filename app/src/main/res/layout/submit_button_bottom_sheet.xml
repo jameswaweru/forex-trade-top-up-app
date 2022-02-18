@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/payBottomSheetLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="true"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/secondButtonsView"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:fontFamily="@font/averta_semibold"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:id="@+id/submitButton2"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_marginTop="80dp"
+            android:text="Continue"
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bottom_button_background_square_corners"
+            android:textSize="16sp"
+            />
+
+        <View
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:id="@+id/separator_2"
+            android:layout_below="@+id/submitButton2"
+            android:layout_width="150dp"
+            android:layout_height="6dp"
+            android:background="@android:color/black"
+            android:layout_marginBottom="10dp"
+            />
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/firstButtonsView"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:fontFamily="@font/averta_semibold"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:id="@+id/submitButton"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_marginTop="80dp"
+            android:text="Continue"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bottom_button_background"
+            android:textSize="16sp"
+            />
+
+        <View
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:id="@+id/separator_1"
+            android:layout_below="@+id/submitButton"
+            android:layout_width="150dp"
+            android:layout_height="6dp"
+            android:background="@android:color/black"
+            android:layout_marginBottom="10dp"
+            />
+
+    </RelativeLayout>
+</RelativeLayout>
