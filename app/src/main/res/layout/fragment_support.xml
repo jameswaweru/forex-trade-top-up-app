@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.SupportFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/call_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:elevation="0.7dp"
+            android:foreground="?attr/selectableItemBackground"
+            card_view:cardCornerRadius="0dp">
+
+
+            <RelativeLayout
+                android:id="@+id/btn_call_customer_care_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/call_icon"
+                    android:src="@drawable/ic_baseline_call_24"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <TextView
+                    android:textAppearance="@style/call_support_text_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/call_icon"
+                    android:id="@+id/call_support_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Call support"
+                    android:fontFamily="@font/averta_semibold"
+                    />
+
+                <TextView
+                    android:id="@+id/display_call_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/call_icon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/call_icon"
+                    android:text="0726765977" />
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_background_color"
+                    />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/call_card_view"
+            android:id="@+id/email_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:elevation="0.7dp"
+            android:foreground="?attr/selectableItemBackground"
+            card_view:cardCornerRadius="0dp">
+
+
+            <RelativeLayout
+                android:id="@+id/btn_email_customer_care_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/email_icon"
+                    android:src="@drawable/ic_baseline_email_24"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <TextView
+                    android:textAppearance="@style/call_support_text_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/email_icon"
+                    android:id="@+id/email_support_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email support"
+                    android:fontFamily="@font/averta_semibold"
+                    />
+
+                <TextView
+                    android:layout_below="@+id/email_support_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/display_email"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/email_icon"
+                    android:text="sample-email@gmail.com"
+                    />
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_background_color"
+                    />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/email_card_view"
+            android:id="@+id/fb_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:elevation="0.7dp"
+            android:foreground="?attr/selectableItemBackground"
+            card_view:cardCornerRadius="0dp">
+
+
+            <RelativeLayout
+                android:id="@+id/btn_open_fb_page_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/fb_icon"
+                    android:src="@drawable/fb_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+
+                <TextView
+                    android:textAppearance="@style/call_support_text_style"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/fb_icon"
+                    android:id="@+id/fb_page_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Like Our Facebook Page"
+                    android:fontFamily="@font/averta_semibold"
+                    />
+
+                <TextView
+                    android:layout_below="@+id/fb_page_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/display_fb_page"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/fb_icon"
+                    android:text="FaceBook Page KE"
+                    />
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_background_color"
+                    />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <include layout="@layout/chat_icon_bottom_sheet"/>
+
+
+
+</FrameLayout>

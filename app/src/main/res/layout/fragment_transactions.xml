@@ -3,22 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.TransactionsFragment">
 
     <RelativeLayout
         android:layout_margin="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/recent_transactions_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recent Transactions"
-            />
-
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_below="@+id/recent_transactions_label"
             android:visibility="visible"
             android:layout_marginTop="5dp"
             android:id="@+id/transaction_receipts_recyclerview"
@@ -55,4 +47,5 @@
 
 
     </RelativeLayout>
+
 </FrameLayout>

@@ -19,6 +19,7 @@
     <color name="my_toolbar_color">#AEB6BF</color>
     <color name="button_color">#5D6D7E</color>
     <color name="reset_pin_text_color">#276EF1</color>
+    <color name="listview_underground_color">#F2F2F4</color>
 
 
 </resources>

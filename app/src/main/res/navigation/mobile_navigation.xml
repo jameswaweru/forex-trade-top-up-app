@@ -6,20 +6,61 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
+        android:id="@+id/nav_deposit"
+        android:name="com.forex.forex_topup.ui.DepositFragment"
+        android:label="@string/menu_deposit"
+        tools:layout="@layout/fragment_deposit" />
+
+    <fragment
+        android:id="@+id/nav_withdraw"
+        android:name="com.forex.forex_topup.ui.WithdrawFragment"
+        android:label="@string/menu_withdraw"
+        tools:layout="@layout/fragment_withdraw" />
+
+    <fragment
         android:id="@+id/nav_home"
         android:name="com.forex.forex_topup.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.forex.forex_topup.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_transactions"
+        android:name="com.forex.forex_topup.ui.TransactionsFragment"
+        android:label="@string/menu_transactions"
+        tools:layout="@layout/fragment_transactions" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.forex.forex_topup.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_edit_info"
+        android:name="com.forex.forex_topup.ui.EditInfoFragment"
+        android:label="@string/menu_edit_info"
+        tools:layout="@layout/fragment_edit_info" />
+
+    <fragment
+        android:id="@+id/nav_support"
+        android:name="com.forex.forex_topup.ui.SupportFragment"
+        android:label="@string/menu_support"
+        tools:layout="@layout/fragment_support" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.forex.forex_topup.ui.SupportFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_log_out" />
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_gallery"-->
+<!--        android:name="com.forex.forex_topup.ui.gallery.GalleryFragment"-->
+<!--        android:label="@string/menu_gallery"-->
+<!--        tools:layout="@layout/fragment_gallery" />-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_slideshow"-->
+<!--        android:name="com.forex.forex_topup.ui.slideshow.SlideshowFragment"-->
+<!--        android:label="@string/menu_slideshow"-->
+<!--        tools:layout="@layout/fragment_slideshow" />-->
+
+
+
+
 </navigation>

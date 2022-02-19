@@ -9,12 +9,43 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_deposit"
+            android:icon="@drawable/ic_baseline_download_for_offline_24"
+            android:title="@string/menu_deposit" />
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_transactions"
+            android:icon="@drawable/ic_baseline_download_for_offline_24"
+            android:title="@string/menu_transactions" />
+
+        <item
+            android:id="@+id/nav_edit_info"
+            android:icon="@drawable/ic_baseline_download_for_offline_24"
+            android:title="@string/menu_edit_info" />
+
+        <item
+            android:id="@+id/nav_support"
+            android:icon="@drawable/ic_baseline_download_for_offline_24"
+            android:title="@string/menu_support" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_baseline_download_for_offline_24"
+            android:title="@string/menu_logout" />
+
+        <item
+            android:id="@+id/nav_withdraw"
+            android:icon="@drawable/ic_baseline_download_for_offline_24"
+            android:title="@string/menu_withdraw" />
+
+
+<!--        <item-->
+<!--            android:id="@+id/nav_gallery"-->
+<!--            android:icon="@drawable/ic_menu_gallery"-->
+<!--            android:title="@string/menu_gallery" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_slideshow"-->
+<!--            android:icon="@drawable/ic_menu_slideshow"-->
+<!--            android:title="@string/menu_slideshow" />-->
     </group>
 </menu>

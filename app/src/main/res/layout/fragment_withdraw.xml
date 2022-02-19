@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.WithdrawFragment">
+
+    <RelativeLayout
+        android:layout_margin="15dp"
+        android:background="@drawable/border_with_small_rounds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/withdraw_label"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Withdraw"
+            />
+
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/withdraw_label"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border_with_small_rounds"
+            android:id="@+id/amount_layout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+
+            <EditText
+                android:inputType="text"
+                android:id="@+id/input_amount"
+                android:backgroundTint="@color/color_faint_white"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Amount"
+                android:textAppearance="@style/hint__"
+                android:textColorHint="@color/global_hint_text_"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_below="@+id/amount_layout"
+            android:id="@+id/display_totals_to_reflect_label"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You will receive $ 2000"
+            />
+
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/display_totals_to_reflect_label"
+            android:clickable="true"
+            android:id="@+id/btn_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <include layout="@layout/general_button" />
+        </RelativeLayout>
+
+        <include layout="@layout/loading_bar_layout" />
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,58 +1,40 @@
-package com.forex.forex_topup.ui.home;
+package com.forex.forex_topup.ui;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 import com.forex.forex_topup.R;
 import com.forex.forex_topup.adapters.ListTransactionsAdapter;
-import com.forex.forex_topup.databinding.FragmentHomeBinding;
 import com.forex.forex_topup.models.Transactions;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment implements ListTransactionsAdapter.ListTransactionsAdapterListener {
-
-//    private HomeViewModel homeViewModel;
-//    private FragmentHomeBinding binding;
+public class TransactionsFragment extends Fragment
+        implements ListTransactionsAdapter.ListTransactionsAdapterListener {
 
     private ListTransactionsAdapter listTransactionsAdapter;
     private List<Transactions> transactionsList;
     private RecyclerView transactionSummaryRecyclerview;
 
-    public HomeFragment() {
+    public TransactionsFragment() {
         // Required empty public constructor
     }
 
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-//        homeViewModel =
-//                new ViewModelProvider(this).get(HomeViewModel.class);
-
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-//        binding = FragmentHomeBinding.inflate(inflater, container, false);
-//        View root = binding.getRoot();
-//
-//        final TextView textView = binding.textHome;
-//        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_transactions, container, false);
 
         transactionsList = new ArrayList<>();
         listTransactionsAdapter = new ListTransactionsAdapter(getActivity() , transactionsList , this);
@@ -113,10 +95,4 @@ public class HomeFragment extends Fragment implements ListTransactionsAdapter.Li
     public void onTransactionSelected(Transactions option) {
 
     }
-
-//    @Override
-//    public void onDestroyView() {
-//        super.onDestroyView();
-//        binding = null;
-//    }
 }

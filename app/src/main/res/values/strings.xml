@@ -10,4 +10,13 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_deposit">Deposit</string>
+    <string name="menu_withdraw">Withdraw</string>
+    <string name="menu_transactions">Transactions</string>
+    <string name="menu_edit_info">Edit</string>
+    <string name="menu_support">Support</string>
+    <string name="menu_logout">LogOut</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
