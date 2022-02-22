@@ -11,15 +11,20 @@
     <color name="color_faint_white">#F9F9F9</color>
     <color name="color_faint_white_transparent">#FFFFFFFF</color>
 
-    <color name="tool_bar_color">#AEB6BF</color>
-    <color name="status_bar_color">#AEB6BF</color>
+    <color name="tool_bar_color">#6DB2FC</color>
+    <color name="status_bar_color">#6DB2FC</color>
+<!--    <color name="tool_bar_color">#AEB6BF</color>-->
+<!--    <color name="status_bar_color">#AEB6BF</color>-->
     <color name="global_hint_text_">#979cc8</color>
     <color name="line_background_color">#E4E4E4</color>
     <color name="devider_line_color">#E9E9EB</color>
-    <color name="my_toolbar_color">#AEB6BF</color>
+<!--    <color name="my_toolbar_color">#AEB6BF</color>-->
+    <color name="my_toolbar_color">#6DB2FC</color>
     <color name="button_color">#5D6D7E</color>
     <color name="reset_pin_text_color">#276EF1</color>
     <color name="listview_underground_color">#F2F2F4</color>
+
+    <color name="text_label_color">#276EF1</color>
 
 
 </resources>

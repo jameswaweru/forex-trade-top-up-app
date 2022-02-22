@@ -11,7 +11,54 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
 
+
+       <RelativeLayout
+           android:layout_margin="10dp"
+           android:clickable="true"
+           android:id="@+id/account_selected_layout"
+           android:layout_width="match_parent"
+           android:layout_height="60dp">
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/account_label"
+               android:textColor="@color/text_label_color"
+               android:text="Account Number"
+               android:fontFamily="@font/sofiapro_light"
+               android:textSize="12dp"
+               />
+           <TextView
+               android:layout_marginTop="10dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/account_label"
+               android:fontFamily="@font/sofiapro_light"
+               android:textSize="15dp"
+               android:text="Select Account"
+               android:id="@+id/display_selected_account"
+               />
+
+           <ImageView
+               android:layout_centerVertical="true"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:layout_alignParentRight="true"
+               android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+               />
+
+           <View
+               android:background="@color/text_label_color"
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:layout_alignParentBottom="true"
+               />
+
+       </RelativeLayout>
+
+
        <TextView
+           android:layout_below="@+id/account_selected_layout"
            android:id="@+id/deposit_label"
            android:layout_marginLeft="10dp"
            android:layout_marginTop="25dp"
@@ -63,6 +110,7 @@
            android:id="@+id/btn_button"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content">
+
            <include layout="@layout/general_button" />
        </RelativeLayout>
 

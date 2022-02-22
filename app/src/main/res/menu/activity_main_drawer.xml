@@ -34,9 +34,9 @@
             android:title="@string/menu_logout" />
 
         <item
-            android:id="@+id/nav_withdraw"
+            android:id="@+id/nav_my_accounts"
             android:icon="@drawable/ic_baseline_download_for_offline_24"
-            android:title="@string/menu_withdraw" />
+            android:title="@string/menu_my_accounts" />
 
 
 <!--        <item-->

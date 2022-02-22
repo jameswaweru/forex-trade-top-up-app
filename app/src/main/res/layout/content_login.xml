@@ -26,11 +26,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <ImageView
+                        android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:id="@+id/registration_header_image"
-                        android:src="@drawable/marjian"
-                        android:scaleType="fitXY"
+                        android:src="@drawable/binary_cash_mpesa"
                         />
                 </RelativeLayout>
 

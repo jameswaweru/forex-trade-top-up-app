@@ -11,25 +11,30 @@
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/activity_main.xml" value="0.209375" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/activity_register.xml" value="0.209375" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/activity_splash_screen.xml" value="0.1953125" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/add_account_layout.xml" value="0.2" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/app_bar_main.xml" value="0.209375" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/chat_icon_bottom_sheet.xml" value="0.1171875" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/content_login.xml" value="0.2" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/content_main.xml" value="0.209375" />
-        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/content_registration.xml" value="0.4" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/content_registration.xml" value="0.176" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/display_option_row_layout.xml" value="0.19739583333333333" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/fragment_deposit.xml" value="0.4" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/fragment_edit_info.xml" value="0.14114583333333333" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/fragment_home.xml" value="0.15885416666666666" />
-        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/fragment_support.xml" value="0.4" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/fragment_support.xml" value="0.3515625" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/fragment_transactions.xml" value="0.14114583333333333" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/fragment_user_accounts.xml" value="0.140625" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/fragment_withdraw.xml" value="0.264" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/general_button.xml" value="0.12916666666666668" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/just_text_toolbar.xml" value="0.209375" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/list_options_list_services_dropdown.xml" value="0.19739583333333333" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/loading_bar_layout.xml" value="0.1" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/nav_header_main.xml" value="0.209375" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/submit_button_bottom_sheet.xml" value="0.209375" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/transaction_card.xml" value="0.20260416666666667" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/layout/transactions_row_layout.xml" value="0.4" />
         <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/menu/activity_main_drawer.xml" value="0.4" />
+        <entry key="..\:/FredMbuguaProjects/forex-trade-top-up-app/app/src/main/res/menu/main.xml" value="0.140625" />
         <entry key="..\:/Users/Diliways/Downloads/ForexTopUp/app/src/main/res/layout/content_main.xml" value="0.22864583333333333" />
       </map>
     </option>

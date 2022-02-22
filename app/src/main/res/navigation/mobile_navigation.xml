@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_deposit">
 
     <fragment
         android:id="@+id/nav_deposit"
         android:name="com.forex.forex_topup.ui.DepositFragment"
-        android:label="@string/menu_deposit"
+        android:label="Home"
         tools:layout="@layout/fragment_deposit" />
 
     <fragment
@@ -46,6 +46,12 @@
         android:name="com.forex.forex_topup.ui.SupportFragment"
         android:label="@string/menu_logout"
         tools:layout="@layout/fragment_log_out" />
+
+    <fragment
+        android:id="@+id/nav_my_accounts"
+        android:name="com.forex.forex_topup.ui.UserAccountsFragment"
+        android:label="@string/menu_my_accounts"
+        tools:layout="@layout/fragment_user_accounts" />
 
 
 <!--    <fragment-->

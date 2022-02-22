@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UserAccountsFragment">
+
+    <RelativeLayout
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="visible"
+            android:layout_marginTop="5dp"
+            android:id="@+id/user_accounts_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            tools:ignore="MissingConstraints" />
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:layout_centerInParent="true"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:visibility="gone"
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/tool_bar_color" />
+
+        <RelativeLayout
+            android:id="@+id/not_found_layout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No receipts "
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/add_account_layout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/_account_label"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Account Number"
+                />
+
+            <RelativeLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@+id/_account_label"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border_with_small_rounds"
+                android:id="@+id/_account_number_editext_layout"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+
+                <EditText
+                    android:id="@+id/input_account_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="@color/color_faint_white"
+                    android:hint="Account number"
+                    android:inputType="number"
+                    android:textAppearance="@style/hint__"
+                    android:textColorHint="@color/global_hint_text_" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/_account_number_editext_layout"
+                android:clickable="true"
+                android:id="@+id/btn_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/general_button" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <include layout="@layout/add_account_layout"/>
+
+
+</FrameLayout>

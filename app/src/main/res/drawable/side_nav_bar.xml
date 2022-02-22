@@ -6,10 +6,16 @@
 <!--        android:endColor="#E9E9EB"-->
 <!--        android:startColor="#E4E4E4"-->
 <!--        android:type="linear" />-->
+<!--    <gradient-->
+<!--        android:angle="135"-->
+<!--        android:centerColor="@color/white"-->
+<!--        android:endColor="#E9E9EB"-->
+<!--        android:startColor="#E4E4E4"-->
+<!--        android:type="linear" />-->
     <gradient
         android:angle="135"
-        android:centerColor="@color/white"
-        android:endColor="#E9E9EB"
-        android:startColor="#E4E4E4"
+        android:centerColor="@color/tool_bar_color"
+        android:endColor="@color/status_bar_color"
+        android:startColor="@color/tool_bar_color"
         android:type="linear" />
 </shape>
