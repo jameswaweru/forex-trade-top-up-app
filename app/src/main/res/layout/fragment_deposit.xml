@@ -79,28 +79,26 @@
 
 
            <EditText
-               android:inputType="text"
                android:id="@+id/input_amount"
-               android:backgroundTint="@color/color_faint_white"
-               android:layout_marginLeft="10dp"
-               android:layout_centerVertical="true"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
+               android:layout_centerVertical="true"
+               android:layout_marginLeft="10dp"
+               android:backgroundTint="@color/color_faint_white"
                android:hint="Amount"
+               android:inputType="number"
                android:textAppearance="@style/hint__"
-               android:textColorHint="@color/global_hint_text_"
-               />
+               android:textColorHint="@color/global_hint_text_" />
        </RelativeLayout>
 
        <TextView
-           android:layout_below="@+id/amount_layout"
            android:id="@+id/display_totals_to_reflect_label"
-           android:layout_marginLeft="10dp"
-           android:layout_marginTop="25dp"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="You will receive $ 2000"
-           />
+           android:layout_below="@+id/amount_layout"
+           android:layout_marginLeft="10dp"
+           android:layout_marginTop="25dp"
+           android:text="" />
 
 
        <RelativeLayout

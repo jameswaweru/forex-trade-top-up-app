@@ -92,7 +92,7 @@
 
 
                     <EditText
-                        android:inputType="text"
+                        android:inputType="textPassword"
                         android:id="@+id/input_password"
                         android:backgroundTint="@color/color_faint_white"
                         android:layout_marginLeft="10dp"
@@ -119,16 +119,17 @@
                         android:layout_height="wrap_content"
                         android:text="Forgot password?"
                         />
+
                     <TextView
-                        android:fontFamily="@font/averta_bold"
-                        android:textColor="@color/reset_pin_text_color"
-                        android:layout_marginLeft="5dp"
-                        android:layout_toRightOf="@+id/forgot_password_label"
+                        android:clickable="true"
                         android:id="@+id/forgot_password_link"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/forgot_password_label"
+                        android:fontFamily="@font/averta_bold"
                         android:text="Reset Pin"
-                        />
+                        android:textColor="@color/reset_pin_text_color" />
 
                 </RelativeLayout>
 
@@ -146,16 +147,17 @@
                         android:layout_height="wrap_content"
                         android:text="Not a Member?"
                         />
+
                     <TextView
-                        android:fontFamily="@font/averta_bold"
-                        android:textColor="@color/reset_pin_text_color"
-                        android:layout_marginLeft="5dp"
-                        android:layout_toRightOf="@+id/register_label"
+                        android:clickable="true"
                         android:id="@+id/register_link"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/register_label"
+                        android:fontFamily="@font/averta_bold"
                         android:text="Register here"
-                        />
+                        android:textColor="@color/reset_pin_text_color" />
 
                 </RelativeLayout>
 

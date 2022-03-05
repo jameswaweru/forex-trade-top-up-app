@@ -14,6 +14,11 @@
             android:title="@string/menu_deposit" />
 
         <item
+            android:id="@+id/nav_withdraw"
+            android:icon="@drawable/ic_baseline_download_for_offline_24"
+            android:title="@string/menu_withdraw" />
+
+        <item
             android:id="@+id/nav_transactions"
             android:icon="@drawable/ic_baseline_download_for_offline_24"
             android:title="@string/menu_transactions" />

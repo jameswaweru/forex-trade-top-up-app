@@ -3,7 +3,9 @@ package com.forex.forex_topup;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
+import com.forex.forex_topup.utils.PrefManager;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    private TextView displayPhoneNumber;
+    private PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         setSupportActionBar(binding.appBarMain.toolbar);
 //        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
@@ -43,12 +48,18 @@ public class MainActivity extends AppCompatActivity {
 
 //        R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
                 mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_deposit,R.id.nav_home, R.id.nav_transactions, R.id.nav_edit_info, R.id.nav_logout, R.id.nav_support,R.id.nav_withdraw)
+                R.id.nav_deposit,R.id.nav_home, R.id.nav_transactions, R.id.nav_edit_info, R.id.nav_logout,
+                        R.id.nav_support,R.id.nav_withdraw)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        prefManager = new PrefManager(getApplicationContext());
+        View headerLayout = navigationView.getHeaderView(0);
+        displayPhoneNumber = headerLayout.findViewById(R.id.nav_header_display_phone_number);
+        displayPhoneNumber.setText(prefManager.getMSISDN());
 
     }
 

@@ -25,6 +25,24 @@
                 android:src="@drawable/successful_order"
                 android:scaleType="fitXY"
                 />
+            <ImageView
+                android:id="@+id/transaction_icon2"
+                android:layout_margin="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_pending_24"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                />
+            <ImageView
+                android:id="@+id/transaction_icon3"
+                android:layout_margin="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_failed_24"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                />
         </RelativeLayout>
 
 
@@ -32,9 +50,8 @@
             android:layout_marginTop="12dp"
             android:id="@+id/transaction_text"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="30dp"
             android:layout_toRightOf="@+id/image_view_layout"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sent to Mpesa"
             android:textAppearance="@style/notifications_header"
@@ -42,15 +59,26 @@
             />
 
         <TextView
-            android:id="@+id/transaction_msisdn"
-            android:visibility="visible"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/image_view_layout"
-            android:layout_below="@+id/transaction_text"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="12dp"
+            android:id="@+id/transaction_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0726765977"
+            android:text=""
+            android:textAppearance="@style/notifications_header"
             android:fontFamily="@font/averta_regular"
+            />
+
+        <TextView
+            android:id="@+id/transaction_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transaction_text"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/image_view_layout"
+            android:fontFamily="@font/averta_regular"
+            android:text="0726765977"
+            android:visibility="visible"
 
             />
 
@@ -91,7 +119,7 @@
             android:layout_toRightOf="@+id/image_view_layout"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:layout_below="@+id/transaction_msisdn"
+            android:layout_below="@+id/transaction_account"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/listview_underground_color"

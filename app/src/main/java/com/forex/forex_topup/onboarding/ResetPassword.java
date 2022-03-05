@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.forex.forex_topup.MainActivity;
 import com.forex.forex_topup.R;
 import com.forex.forex_topup.utils.Configs;
 import com.forex.forex_topup.utils.HelperUtilities;
@@ -28,61 +27,47 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Login extends AppCompatActivity {
+public class ResetPassword extends AppCompatActivity {
 
+    Button btnReset;
     ImageView backButton;
-    TextView toolBarText;
-    Button btnSubmit;
-    EditText iPhoneNum, iPassword;
-
+    TextView toolBarText, displayResetPinCodeHeaderText;
     private boolean isStillProcessing = false;
     HelperUtilities helperUtilities;
     PrefManager prefManager;
-    TextView openRegisterPage , openResetPin;
-
+    EditText  iPhoneNum, iFirstPassword, iLastPassword, iOtp;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_reset_password);
 
-        openResetPin = findViewById(R.id.forgot_password_link);
-        openRegisterPage = findViewById(R.id.register_link);
+
+        displayResetPinCodeHeaderText = findViewById(R.id._reset_otp_header);
+        iOtp = findViewById(R.id.input_otp);
+        iLastPassword = findViewById(R.id.input_second_password);
+        iFirstPassword = findViewById(R.id.input_password);
+        iPhoneNum = findViewById(R.id.input_msisdn);
         helperUtilities = new HelperUtilities(getApplicationContext());
         prefManager = new PrefManager(getApplicationContext());
-        iPhoneNum = findViewById(R.id.input_msisdn);
-        iPassword = findViewById(R.id.input_password);
 
-        btnSubmit = findViewById(R.id.submitButton);
+        btnReset = findViewById(R.id.submitButton);
         toolBarText = findViewById(R.id.toolbar_text);
         backButton = findViewById(R.id.back_btn);
-        toolBarText.setText("Login");
-
-
-        iPhoneNum.setText(prefManager.getMSISDN());
+        toolBarText.setText("Set New Pin");
+        displayResetPinCodeHeaderText.setText("Use the otp we sent to "+prefManager.getMSISDN());
+        iOtp.setText(prefManager.getMSISDN());
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                prefManager.setIsResetingPin(false);
+                prefManager.setFirstTimeLaunch(true);
+                startActivity(new Intent(getApplicationContext() , Login.class));
             }
         });
 
-        openResetPin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), GenerateSmsOtp.class));
-            }
-        });
-
-        openRegisterPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Register.class));
-            }
-        });
-
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+        btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -91,32 +76,51 @@ public class Login extends AppCompatActivity {
                     return;
                 }
 
+                if(TextUtils.isEmpty(iOtp.getText().toString())){
+                    Toast.makeText(getApplicationContext() , "Enter otp",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 if(TextUtils.isEmpty(iPhoneNum.getText().toString())){
                     Toast.makeText(getApplicationContext() , "Enter phone number",Toast.LENGTH_LONG).show();
                     return;
                 }
 
-                if(TextUtils.isEmpty(iPassword.getText().toString())){
+
+                if(TextUtils.isEmpty(iFirstPassword.getText().toString())){
                     Toast.makeText(getApplicationContext() , "Enter password",Toast.LENGTH_LONG).show();
                     return;
                 }
 
-                loginUser();
+                if(TextUtils.isEmpty(iLastPassword.getText().toString())){
+                    Toast.makeText(getApplicationContext() , "Re enter password to compare",Toast.LENGTH_LONG).show();
+                    return;
+                }
 
+                if(!iFirstPassword.getText().toString().equals(iLastPassword.getText().toString())){
+                    Toast.makeText(getApplicationContext() , "Passwords doesnt match",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+
+
+
+                resetPin();
             }
         });
 
     }
 
 
-
-    public void loginUser(){
+    public void resetPin(){
         isStillProcessing = true;
-        helperUtilities.showLoadingBar(Login.this , "Logging.");
+        helperUtilities.showLoadingBar(ResetPassword.this , "Processing..");
 
         final Map<String, Object> postParam = new HashMap<String, Object>();
-        postParam.put("phoneNumber" , iPhoneNum.getText().toString());
-        postParam.put("password" , iPassword.getText().toString());
+        postParam.put("msisdn" , iPhoneNum.getText().toString());
+        postParam.put("password",iFirstPassword.getText().toString());
+        postParam.put("otp",iOtp.getText().toString());
+
 
         helperUtilities.volleyHttpPostRequestV2(postParam, new ResponseCallback() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -130,19 +134,10 @@ public class Login extends AppCompatActivity {
                     //String status =
                     int status = Integer.parseInt(response.getString("statusCode"));
                     if(status == Configs.sucessStatusCode){
-                        JSONObject data = response.getJSONObject("data");
-                        JSONObject tradeSettings = data.getJSONObject("tradeSettings");
-
-                        prefManager.setUsdConversionRate(tradeSettings.getString("usdConversionAmount"));
-                        prefManager.setUsdDepositRate(tradeSettings.getString("depositConversionRate"));
-                        prefManager.setUsdWithdrawRate(tradeSettings.getString("withdrawConversionRate"));
 
                         prefManager.setMSISDN(helperUtilities.formatNumber(iPhoneNum.getText().toString()));
-                        prefManager.setUserId(String.valueOf(data.getInt("userId")));
-                        prefManager.setFirstTimeLaunch(false);
-                        prefManager.setIsResetingPin(false);
 
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Login.class));
                         finish();
 
                     }
@@ -163,23 +158,22 @@ public class Login extends AppCompatActivity {
                 Log.d("action:", "error response from api..");
 
                 if(response.isNull("statusDescription")) {
-                    helperUtilities.showErrorMessage(Login.this, response.toString());
+                    helperUtilities.showErrorMessage(ResetPassword.this, response.toString());
                 }else{
                     try {
                         //showErrorMessage(response.getString("message"));
 
                         Log.d("action:", "error response from api..:"+response.getString("statusDescription"));
 
-                        helperUtilities.showErrorMessage(Login.this, response.getString("statusDescription"));
+                        helperUtilities.showErrorMessage(ResetPassword.this, response.getString("statusDescription"));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
             }
 
-        },Configs.apiUrl+"users/login");
+        },Configs.apiUrl+"users/resetPin");
     }
-
 
 
 }

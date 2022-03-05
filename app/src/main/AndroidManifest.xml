@@ -2,18 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.forex.forex_topup">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_binary_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ForexTopUp">
         <activity
-            android:name=".onboarding.Login"
+            android:name=".onboarding.ResetPassword"
             android:exported="false"
             android:theme="@style/Theme.ForexTopUp.NoActionBar"
             />
+        <activity
+            android:name=".onboarding.GenerateSmsOtp"
+            android:exported="false"
+            android:theme="@style/Theme.ForexTopUp.NoActionBar"
+            />
+        <activity
+            android:name=".onboarding.Login"
+            android:exported="false"
+            android:theme="@style/Theme.ForexTopUp.NoActionBar" />
         <activity
             android:name=".onboarding.Register"
             android:exported="false"

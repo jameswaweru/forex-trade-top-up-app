@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.forex.forex_topup.R;
 import com.forex.forex_topup.models.Transactions;
+import com.forex.forex_topup.utils.HelperUtilities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,21 +28,26 @@ public class ListTransactionsAdapter extends RecyclerView.Adapter<ListTransactio
     private List<Transactions> transactionsListFiltered;
     private ListTransactionsAdapterListener listener;
 //    private PrefManager prefManager;
+    private HelperUtilities helperUtilities;
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView transText , transID, transAmount , transMSISDN;
+        public TextView transText , transID, transAmount , transAccount, transTime;
         public ProgressBar progressBar;
-        private ImageView transIcon;
+        private ImageView transIcon, transIcon2, transIcon3;
         private RelativeLayout myView;
 
         public MyViewHolder(View view) {
             super(view);
             transText = view.findViewById(R.id.transaction_text);
             transID = view.findViewById(R.id.hold_transaction_id);
-            transMSISDN = view.findViewById(R.id.transaction_msisdn);
+            transAccount = view.findViewById(R.id.transaction_account);
             transAmount = view.findViewById(R.id.transaction_amount);
             transIcon = view.findViewById(R.id.transaction_icon);
+            transIcon2 = view.findViewById(R.id.transaction_icon2);
+            transIcon3 = view.findViewById(R.id.transaction_icon3);
+            transTime = view.findViewById(R.id.transaction_time);
+            helperUtilities = new HelperUtilities(context);
 //            progressBar = view.findViewById(R.id.progressBar2);
 //            is_selected_Contact = view.findViewById(R.id.show_selected);
 //            prefManager = new PrefManager(context);
@@ -83,18 +89,38 @@ public class ListTransactionsAdapter extends RecyclerView.Adapter<ListTransactio
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
         final Transactions transactions = transactionsList.get(position);
 
-//        if(contact.getColumnContactNumber().equals(prefManager.getSelectedAirtimeRecipientNumber())){
-//            holder.is_selected_Contact.setVisibility(View.VISIBLE);
-//        }else{
-//            holder.is_selected_Contact.setVisibility(View.GONE);
-//        }
+        String orderTransTime = transactions.getTransactionTime();
+        String monthnNum = orderTransTime.substring(5, 7);
+        String day = orderTransTime.substring(8, 10);
+        String year = orderTransTime.substring(0, 4);
+        String timeInFull = orderTransTime.substring(11, 16);
+        String hr = orderTransTime.substring(11, 13);
+
+        String timeString = timeInFull+" "+helperUtilities.getPmOrAM(Integer.valueOf(hr));
+        String dateInfull = day+" "+helperUtilities.getSelectedMonthInString(Integer.valueOf(monthnNum))+","+year;
+
+        if(transactions.getTransactionStatusID().equals("Successful")){
+            holder.transIcon.setVisibility(View.VISIBLE);
+            holder.transIcon2.setVisibility(View.GONE);
+            holder.transIcon3.setVisibility(View.GONE);
+        }else if(transactions.getTransactionStatusID().equals("Pending")){
+            holder.transIcon.setVisibility(View.GONE);
+            holder.transIcon2.setVisibility(View.VISIBLE);
+            holder.transIcon3.setVisibility(View.GONE);
+        }
+        else{
+            holder.transIcon.setVisibility(View.GONE);
+            holder.transIcon2.setVisibility(View.GONE);
+            holder.transIcon3.setVisibility(View.VISIBLE);
+        }
 
 
 
         holder.transText.setText(transactions.getTransactionText());
-        holder.transMSISDN.setText(transactions.getTransactionMsisdn());
+        holder.transAccount.setText(transactions.getTransactionAccountNumber());
         holder.transAmount.setText(transactions.getTransactionAmount());
         holder.transID.setText(transactions.getTransactionID());
+        holder.transTime.setText(dateInfull+" "+timeString);
 //        Glide.with(context)
 //                .load(driverServiceOptions.getDriverServiceOptionIcon())
 //                .listener(new RequestListener<Drawable>() {

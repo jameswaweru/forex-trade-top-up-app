@@ -5,10 +5,43 @@
     android:layout_height="match_parent"
     tools:context=".ui.LogOut">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/no_internet_logo"
+            android:layout_centerInParent="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/icon_logout"
+            />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/no_internet_text"
+            android:textSize="20sp"
+            android:text="Logout. \nConfirm you want to logOut?"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/no_internet_logo"
+            android:gravity="center_horizontal" />
+
+        <RelativeLayout
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/no_internet_text"
+            android:clickable="true"
+            android:id="@+id/btn_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/general_button" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
 
 </FrameLayout>

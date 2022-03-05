@@ -11,13 +11,63 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:id="@+id/account_selected_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/account_label"
+                android:textColor="@color/text_label_color"
+                android:text="Account Number"
+                android:fontFamily="@font/sofiapro_light"
+                android:textSize="12dp"
+                />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/account_label"
+                android:fontFamily="@font/sofiapro_light"
+                android:textSize="15dp"
+                android:text="Select Account"
+                android:id="@+id/display_selected_account"
+                />
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+                />
+
+            <View
+                android:background="@color/text_label_color"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                />
+
+        </RelativeLayout>
+
+
+
+
+
         <TextView
+            android:layout_below="@+id/account_selected_layout"
             android:id="@+id/withdraw_label"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Withdraw"
+            android:text="Withdraw Amount in USD"
             />
 
         <RelativeLayout
@@ -52,11 +102,34 @@
             android:layout_marginTop="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You will receive $ 2000"
+            android:text=""
+            />
+
+
+        <TextView
+            android:layout_below="@+id/display_totals_to_reflect_label"
+            android:id="@+id/withdraw_steps_header"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HOW TO WITHDRAW"
+            android:fontFamily="@font/averta_semibold"
+            />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/withdaw_steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/withdraw_steps_header"
+            android:text="Go to Cashier\nPayment agents\nWithdraw\nGo to your email and click on the verification link sent to your email\nSelect Payment Agent\n( +Binary Cash Mpesa )\nEnter the amount in USD\nSubmit and the confirm\nText me your CR account and the amount you have withdrawn in USD"
             />
 
 
         <RelativeLayout
+            android:visibility="gone"
             android:layout_marginTop="20dp"
             android:layout_below="@+id/display_totals_to_reflect_label"
             android:clickable="true"
