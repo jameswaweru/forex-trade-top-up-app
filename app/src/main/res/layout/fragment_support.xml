@@ -4,9 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.SupportFragment">
+    tools:context=".ui.SupportFragment"
+    android:background="@color/white">
 
     <RelativeLayout
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
@@ -35,6 +37,7 @@
                     android:layout_height="30dp"/>
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:textAppearance="@style/call_support_text_style"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -47,13 +50,14 @@
                     />
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/display_call_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/call_icon"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@+id/call_icon"
-                    android:text="0726765977" />
+                    android:text="0722801514" />
 
                 <ImageView
                     android:layout_centerVertical="true"
@@ -98,6 +102,7 @@
                     android:layout_height="30dp"/>
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:textAppearance="@style/call_support_text_style"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -110,13 +115,14 @@
                     />
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:layout_below="@+id/email_support_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/display_email"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@+id/email_icon"
-                    android:text="sample-email@gmail.com"
+                    android:text="edwardugi4@gmail.com"
                     />
 
                 <ImageView
@@ -162,6 +168,7 @@
                     android:layout_height="40dp"/>
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:textAppearance="@style/call_support_text_style"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
@@ -174,13 +181,14 @@
                     />
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:layout_below="@+id/fb_page_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/display_fb_page"
                     android:layout_marginLeft="20dp"
                     android:layout_toRightOf="@+id/fb_icon"
-                    android:text="FaceBook Page KE"
+                    android:text="Binary Cash Mpesa"
                     />
 
                 <ImageView

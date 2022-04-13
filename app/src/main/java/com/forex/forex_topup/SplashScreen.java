@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,6 +30,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -107,6 +110,8 @@ public class SplashScreen extends AppCompatActivity {
                         prefManager.setUsdConversionRate(tradeSettings.getString("usdConversionAmount"));
                         prefManager.setUsdDepositRate(tradeSettings.getString("depositConversionRate"));
                         prefManager.setUsdWithdrawRate(tradeSettings.getString("withdrawConversionRate"));
+                        prefManager.setDepositLimit(tradeSettings.getString("depositLimit"));
+                        prefManager.setDepositLowerLimit(tradeSettings.getString("depositLowerLimit"));
 
                     }
 
@@ -136,14 +141,36 @@ public class SplashScreen extends AppCompatActivity {
 
                         Log.d("action:", "error response from api..:"+response.getString("statusDescription"));
 
-                        helperUtilities.showErrorMessage(getApplicationContext(), response.getString("statusDescription"));
+                        Log.d("action:", "error response from api..:"+response.getString("statusDescription"));
+                        if(response.getInt("statusCode") == Configs.outdatedVersion){
+                            SweetAlertDialog pDialog = new SweetAlertDialog(SplashScreen.this, SweetAlertDialog.ERROR_TYPE);
+//                                pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+                            pDialog.setTitleText("Update App");
+                            pDialog.setContentText(response.getString("statusDescription"));
+                            pDialog.setCancelable(false);
+                            pDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sDialog) {
+                                    //sDialog.dismissWithAnimation();
+
+                                    //https://play.google.com/store/apps/details?id=com.digischool.digischool
+                                    Intent i = new Intent(Intent.ACTION_VIEW);
+                                    i.setData(Uri.parse("https://binarycashmpesa.com/apps/binarycashmpesa-android.apk"));
+                                    startActivity(i);
+
+                                }
+                            });
+                            pDialog.show();
+                        }else {
+                            helperUtilities.showErrorMessage(getApplicationContext(), response.getString("statusDescription"));
+                        }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
             }
 
-        },Configs.apiUrl+"users/getUserDetails/1"); //+prefManager.getUserId()
+        },Configs.apiUrl+"users/getUserDetails/"+prefManager.getUserId()); //+prefManager.getUserId()
     }
 
     public boolean isConnected() {

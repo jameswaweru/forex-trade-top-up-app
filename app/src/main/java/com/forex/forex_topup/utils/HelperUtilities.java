@@ -19,6 +19,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,6 +46,13 @@ public class HelperUtilities {
         this.apiResponse = "";
         //this.prefManager = new PrefManager(context);
     }
+
+    public double roundTruncate(double value){
+        DecimalFormat df = new DecimalFormat("0.00");
+        String roundedTo2dp = df.format(value);
+        return Double.parseDouble(roundedTo2dp);
+    }
+
     public  double round (double value, int precision) {
         int scale = (int) Math.pow(10, precision);
         return (double) Math.round(value * scale) / scale;

@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.forex.forex_topup.MainActivity;
 import com.forex.forex_topup.R;
@@ -95,6 +96,12 @@ public class UserAccountsFragment extends Fragment implements ListUserAccountsAd
         btnAddAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(!iAccountNumber.getText().toString().startsWith("CR")){
+                    Toast.makeText(getActivity(), "Start with CR",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 addTradingAccount();
             }
         });
@@ -176,6 +183,7 @@ public class UserAccountsFragment extends Fragment implements ListUserAccountsAd
 
 
     public void fetchUserAccounts(){
+        userAccountList.clear();
         isStillProcessing = true;
         helperUtilities.showLoadingBar(getActivity() , "Fetching accounts.");
 

@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -79,6 +81,28 @@ public class Register extends AppCompatActivity {
             }
         });
 
+        iBinaryAc.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+                if(s.length() != 0 && s.length()>1){
+                    if(!iBinaryAc.getText().toString().startsWith("CR")){
+                        Toast.makeText(getApplicationContext(), "Start with CR",Toast.LENGTH_LONG).show();
+                    }
+                }
+
+            }
+        });
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,6 +152,11 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
+                if(!iBinaryAc.getText().toString().startsWith("CR")){
+                    Toast.makeText(getApplicationContext(), "Start with CR",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
 
                 registerUser();
             }
@@ -163,6 +192,13 @@ public class Register extends AppCompatActivity {
                     int status = Integer.parseInt(response.getString("statusCode"));
                     if(status == Configs.sucessStatusCode){
                         JSONObject data = response.getJSONObject("data");
+                        JSONObject tradeSettings = data.getJSONObject("tradeSettings");
+
+                        prefManager.setUsdConversionRate(tradeSettings.getString("usdConversionAmount"));
+                        prefManager.setUsdDepositRate(tradeSettings.getString("depositConversionRate"));
+                        prefManager.setUsdWithdrawRate(tradeSettings.getString("withdrawConversionRate"));
+                        prefManager.setDepositLimit(tradeSettings.getString("depositLimit"));
+                        prefManager.setDepositLowerLimit(tradeSettings.getString("depositLowerLimit"));
 
 
                         prefManager.setMSISDN(helperUtilities.formatNumber(iPhoneNum.getText().toString()));

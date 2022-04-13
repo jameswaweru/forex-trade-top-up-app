@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:textColorPrimary">@color/black</item>
     </style>
 
     <style name="hint__">
@@ -36,6 +37,18 @@
     <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:windowBackground">@drawable/rounded_dialog_popup</item>
     </style>
+
+
+
+    <style name="Theme.ForexTopUp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ForexTopUp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ForexTopUp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 
 </resources>

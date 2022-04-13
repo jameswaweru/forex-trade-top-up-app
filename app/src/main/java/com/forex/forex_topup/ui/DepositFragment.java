@@ -37,6 +37,7 @@ import com.forex.forex_topup.utils.HelperUtilities;
 import com.forex.forex_topup.utils.MyDividerItemDecoration;
 import com.forex.forex_topup.utils.PrefManager;
 import com.forex.forex_topup.utils.ResponseCallback;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -55,7 +56,7 @@ public class DepositFragment extends Fragment
     List<UserAccount> userAccountList;
 
     RelativeLayout selectAccount;
-    TextView displaySelectedAccount, displayAmountToReceive;
+    TextView displaySelectedAccount, displayAmountToReceive, displaydepositLimit;
 
     private boolean isStillProcessing = false;
     boolean isAccountSelected = false;
@@ -76,6 +77,7 @@ public class DepositFragment extends Fragment
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_deposit, container, false);
 
+        displaydepositLimit = view.findViewById(R.id.display_deposit_limit);
         displayAmountToReceive = view.findViewById(R.id.display_totals_to_reflect_label);
         prefManager = new PrefManager(getActivity());
         helperUtilities = new HelperUtilities(getActivity());
@@ -89,6 +91,7 @@ public class DepositFragment extends Fragment
         userAccountsAdapter = new ListUserAccountsAdapter(getActivity() , userAccountList , this);
 
         btnPay.setText("Deposit");
+
         eAmount.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -104,7 +107,23 @@ public class DepositFragment extends Fragment
                                       int before, int count) {
                 if(s.length() != 0){
                     double avgAmnt = Double.parseDouble(eAmount.getText().toString())/Double.parseDouble(prefManager.getUsdDepositRate());
-                    displayAmountToReceive.setText("You will receive $ "+helperUtilities.round(avgAmnt,2));
+                    //Toast.makeText(getContext(),"avgAmnt:"+avgAmnt,Toast.LENGTH_LONG).show();
+                    if( avgAmnt < Double.parseDouble(String.valueOf(prefManager.getDepositLowerLimit()))){
+                        String errorMessage = "Deposit limit per transaction is $ "+prefManager.getDepositLowerLimit();
+                        Snackbar.make(view, errorMessage, Snackbar.LENGTH_LONG)
+                                .setAction("", null)
+                                .setBackgroundTint(getResources().getColor(R.color.red_btn_bg_color))
+                                .show();
+                        //displaydepositLimit.setText("Deposit limit per transaction is $ "+prefManager.getDepositLowerLimit());
+                    }else if(Double.parseDouble(eAmount.getText().toString()) > Double.parseDouble(String.valueOf(prefManager.getDepositLimit()))){
+                        String errorMessage = "Deposit limit per transaction is KES "+prefManager.getDepositLimit();
+                        Snackbar.make(view, errorMessage, Snackbar.LENGTH_LONG)
+                                .setAction("", null)
+                                .setBackgroundTint(getResources().getColor(R.color.red_btn_bg_color))
+                                .show();
+                        //displaydepositLimit.setText("Deposit limit per transaction is KES "+prefManager.getDepositLimit());
+                    }
+                    displayAmountToReceive.setText("You will receive $ "+helperUtilities.roundTruncate(avgAmnt));
                 }
 
             }
@@ -130,6 +149,18 @@ public class DepositFragment extends Fragment
 
                 if(!helperUtilities.isNumeric(eAmount.getText().toString())){
                     Toast.makeText(getActivity() , "Amount must be numeric",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                if(Double.parseDouble(eAmount.getText().toString())>Double.parseDouble(prefManager.getDepositLimit())){
+                    Toast.makeText(getActivity() , "Deposit limit is KES "+prefManager.getDepositLimit(),Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                double avgAmnt = Double.parseDouble(eAmount.getText().toString())/Double.parseDouble(prefManager.getUsdDepositRate());
+
+                if(avgAmnt < Double.parseDouble(String.valueOf(prefManager.getDepositLowerLimit()))){
+                    Toast.makeText(getActivity() , "Minimum deposit amount is $ "+prefManager.getDepositLowerLimit(),Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -189,6 +220,7 @@ public class DepositFragment extends Fragment
         postParam.put("accountNumber" , displaySelectedAccount.getText().toString());
         postParam.put("amount", eAmount.getText().toString());
         postParam.put("paymentCode","4074723");
+        postParam.put("userId", prefManager.getUserId());
 
         helperUtilities.volleyHttpPostRequestV2(postParam, new ResponseCallback() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)

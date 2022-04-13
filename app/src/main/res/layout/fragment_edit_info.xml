@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.EditInfoFragment">
 
     <RelativeLayout
@@ -21,6 +22,7 @@
                 tools:ignore="MissingConstraints">
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/change_msisdn_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -33,6 +35,7 @@
 
                 <!-- start new number -->
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/new_msisdn_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -69,6 +72,7 @@
 
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/_msisdn_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -103,6 +107,7 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/password_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"

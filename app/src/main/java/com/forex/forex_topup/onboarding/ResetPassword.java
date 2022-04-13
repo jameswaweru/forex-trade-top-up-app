@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -26,6 +27,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class ResetPassword extends AppCompatActivity {
 
@@ -165,7 +168,32 @@ public class ResetPassword extends AppCompatActivity {
 
                         Log.d("action:", "error response from api..:"+response.getString("statusDescription"));
 
-                        helperUtilities.showErrorMessage(ResetPassword.this, response.getString("statusDescription"));
+                        //helperUtilities.showErrorMessage(ResetPassword.this, response.getString("statusDescription"));
+
+                        if(response.getInt("statusCode") == Configs.outdatedVersion){
+                            SweetAlertDialog pDialog = new SweetAlertDialog(ResetPassword.this, SweetAlertDialog.ERROR_TYPE);
+//                                pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+                            pDialog.setTitleText("Update App");
+                            pDialog.setContentText(response.getString("statusDescription"));
+                            pDialog.setCancelable(false);
+                            pDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sDialog) {
+                                    //sDialog.dismissWithAnimation();
+
+                                    //https://play.google.com/store/apps/details?id=com.digischool.digischool
+                                    Intent i = new Intent(Intent.ACTION_VIEW);
+                                    i.setData(Uri.parse("https://binarycashmpesa.com/apps/binarycashmpesa-android.apk"));
+                                    startActivity(i);
+
+                                }
+                            });
+                            pDialog.show();
+                        }else {
+                            helperUtilities.showErrorMessage(ResetPassword.this, response.getString("statusDescription"));
+                        }
+
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

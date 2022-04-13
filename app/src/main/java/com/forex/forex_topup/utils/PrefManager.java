@@ -19,6 +19,8 @@ public class PrefManager {
     String USD_CONVERSION_RATE = "usedConversionRate";
     String USD_DEPOSIT_RATE = "usdDepositRate";
     String USD_WITHDRAWAL_RATE = "usdWithdrawalRate";
+    String DEPOSIT_LIMIT = "depositLimit";
+    String DEPOSIT_LOWER_LIMIT = "depositLowerLimit";
 
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
     private static final String IS_RESETING_PIN= "isResetingPin";
@@ -28,6 +30,23 @@ public class PrefManager {
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
     }
+
+    public void setDepositLimit(String depositLimit){
+        editor.putString(DEPOSIT_LIMIT,depositLimit);
+        editor.commit();
+    }
+    public String getDepositLimit(){
+        return pref.getString(DEPOSIT_LIMIT, "0");
+    }
+
+    public void setDepositLowerLimit(String depositLowerLimit){
+        editor.putString(DEPOSIT_LOWER_LIMIT,depositLowerLimit);
+        editor.commit();
+    }
+    public String getDepositLowerLimit(){
+        return pref.getString(DEPOSIT_LOWER_LIMIT, "0");
+    }
+
 
     public void setMSISDN(String msisdn){
         editor.putString(MSISDN_KEY,msisdn);

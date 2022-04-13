@@ -126,7 +126,7 @@ public class TransactionsFragment extends Fragment
                 }
             }
 
-        },Configs.apiUrl+"payments/getUserPayments/1"); //+prefManager.getUserId()
+        },Configs.apiUrl+"payments/getUserPayments/"+prefManager.getUserId()); //+prefManager.getUserId()
     }
 
     private void loadTransactions(JSONArray data){

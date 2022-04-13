@@ -98,7 +98,8 @@ public class WithdrawFragment extends Fragment
                                       int before, int count) {
                 if(s.length() != 0){
                     double avgAmnt = Double.parseDouble(eAmount.getText().toString())*Double.parseDouble(prefManager.getUsdWithdrawRate());
-                    displayAmountToReceive.setText("You will receive KES "+helperUtilities.round(avgAmnt,2));
+//                    displayAmountToReceive.setText("You will receive KES "+helperUtilities.round(avgAmnt,2));
+                    displayAmountToReceive.setText("You will receive KES "+helperUtilities.roundTruncate(avgAmnt));
                 }
 
             }

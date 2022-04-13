@@ -95,7 +95,7 @@ public class EditInfoFragment extends Fragment {
         final Map<String, Object> postParam = new HashMap<String, Object>();
         postParam.put("phoneNumber" , iPhoneNew.getText().toString());
         postParam.put("password" , iPassword.getText().toString());
-        postParam.put("userId", "1"); //prefManager.getUserId()
+        postParam.put("userId", prefManager.getUserId()); //prefManager.getUserId()
 
         helperUtilities.volleyHttpPostRequestV2(postParam, new ResponseCallback() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)

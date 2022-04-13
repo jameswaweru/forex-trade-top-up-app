@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.WithdrawFragment">
+    tools:context=".ui.WithdrawFragment"
+    android:background="@color/white">
 
     <RelativeLayout
         android:layout_margin="15dp"
@@ -20,6 +21,7 @@
             android:layout_height="60dp">
 
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/account_label"
@@ -29,6 +31,7 @@
                 android:textSize="12dp"
                 />
             <TextView
+                android:textColor = "?android:textColorPrimary"
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,6 +64,7 @@
 
 
         <TextView
+            android:textColor = "?android:textColorPrimary"
             android:layout_below="@+id/account_selected_layout"
             android:id="@+id/withdraw_label"
             android:layout_marginLeft="10dp"
@@ -96,6 +100,7 @@
         </RelativeLayout>
 
         <TextView
+            android:textColor = "?android:textColorPrimary"
             android:layout_below="@+id/amount_layout"
             android:id="@+id/display_totals_to_reflect_label"
             android:layout_marginLeft="10dp"
@@ -107,6 +112,7 @@
 
 
         <TextView
+            android:textColor = "?android:textColorPrimary"
             android:layout_below="@+id/display_totals_to_reflect_label"
             android:id="@+id/withdraw_steps_header"
             android:layout_marginLeft="10dp"
@@ -118,6 +124,7 @@
             />
 
         <TextView
+            android:textColor = "?android:textColorPrimary"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:id="@+id/withdaw_steps"

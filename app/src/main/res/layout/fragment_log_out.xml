@@ -18,6 +18,7 @@
             />
 
         <TextView
+            android:textColor = "?android:textColorPrimary"
             android:layout_marginTop="20dp"
             android:id="@+id/no_internet_text"
             android:textSize="20sp"

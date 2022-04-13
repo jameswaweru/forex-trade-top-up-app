@@ -3,7 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="60dp">
+    android:id="@+id/rootview"
+    android:layout_marginTop="60dp"
+    android:background="@color/white"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -37,6 +40,7 @@
 
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/_msisdn_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -71,6 +75,7 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/password_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -114,6 +119,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:textColor = "?android:textColorPrimary"
                         android:id="@+id/forgot_password_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -142,6 +148,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:textColor = "?android:textColorPrimary"
                         android:id="@+id/register_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -161,9 +168,16 @@
 
                 </RelativeLayout>
 
+                <RelativeLayout
+                    android:layout_below="@+id/register_option_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <include layout="@layout/general_button" />
+                </RelativeLayout>
 
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:layout_below="@+id/forgot_password_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -172,15 +186,12 @@
                     />
 
 
-
-
-
             </RelativeLayout>
 
 
         </ScrollView>
 
-        <include layout="@layout/submit_button_bottom_sheet" />
+<!--        <include layout="@layout/submit_button_bottom_sheet" />-->
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

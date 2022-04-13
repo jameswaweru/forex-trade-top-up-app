@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="60dp">
+    android:layout_marginTop="60dp"
+    android:background="@color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -43,6 +44,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:textColor = "?android:textColorPrimary"
                         android:id="@+id/register_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -63,6 +65,7 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/first_name_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -98,6 +101,7 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/last_name_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -133,6 +137,7 @@
                 </RelativeLayout>
                 <!-- add id no start -->
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/id_number_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -161,7 +166,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
                         android:backgroundTint="@color/color_faint_white"
-                        android:hint="Last Name"
+                        android:hint="Id Number"
                         android:inputType="number"
                         android:textAppearance="@style/hint__"
                         android:textColorHint="@color/global_hint_text_" />
@@ -169,13 +174,14 @@
                 <!-- add id no end -->
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/binary_account_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
                     android:layout_below="@+id/id_number_edit_text_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Enter Binary Account"
+                    android:text="Enter CR Account"
                     />
 
 
@@ -191,6 +197,7 @@
 
 
                     <EditText
+                        android:text="CR"
                         android:inputType="text"
                         android:id="@+id/input_binary_account"
                         android:backgroundTint="@color/color_faint_white"
@@ -198,7 +205,7 @@
                         android:layout_centerVertical="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="BInary Account"
+                        android:hint="CR Account"
                         android:textAppearance="@style/hint__"
                         android:textColorHint="@color/global_hint_text_"
                         />
@@ -206,6 +213,7 @@
 
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/_msisdn_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -240,6 +248,7 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/password_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -276,6 +285,7 @@
 
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:id="@+id/confirm_password_label"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="25dp"
@@ -310,8 +320,15 @@
                         />
                 </RelativeLayout>
 
+                <RelativeLayout
+                    android:layout_below="@+id/second_password_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <include layout="@layout/general_button" />
+                </RelativeLayout>
 
                 <TextView
+                    android:textColor = "?android:textColorPrimary"
                     android:layout_below="@+id/second_password_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -328,7 +345,7 @@
 
         </ScrollView>
 
-        <include layout="@layout/submit_button_bottom_sheet" />
+<!--        <include layout="@layout/submit_button_bottom_sheet" />-->
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
