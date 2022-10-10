@@ -15,6 +15,7 @@ public class PrefManager {
     // Shared preferences file name
     private static final String PREF_NAME = "binary";
     String MSISDN_KEY = "MSISDN";
+    String EMAIL_KEY = "emailKey";
     String USER_ID = "userId";
     String USD_CONVERSION_RATE = "usedConversionRate";
     String USD_DEPOSIT_RATE = "usdDepositRate";
@@ -47,6 +48,13 @@ public class PrefManager {
         return pref.getString(DEPOSIT_LOWER_LIMIT, "0");
     }
 
+    public void setEmail(String email){
+        editor.putString(EMAIL_KEY,email);
+        editor.commit();
+    }
+    public String getEmail(){
+        return pref.getString(EMAIL_KEY, "");
+    }
 
     public void setMSISDN(String msisdn){
         editor.putString(MSISDN_KEY,msisdn);

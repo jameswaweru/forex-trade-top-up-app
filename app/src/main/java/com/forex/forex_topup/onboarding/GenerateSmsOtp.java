@@ -36,13 +36,14 @@ public class GenerateSmsOtp extends AppCompatActivity {
     private boolean isStillProcessing = false;
     HelperUtilities helperUtilities;
     PrefManager prefManager;
-    EditText iPhoneNum, iPassword;
+    EditText iPhoneNum, iPassword, iEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_sms_otp);
 
+        iEmail = findViewById(R.id.input_email);
         iPhoneNum = findViewById(R.id.input_msisdn);
         helperUtilities = new HelperUtilities(getApplicationContext());
         prefManager = new PrefManager(getApplicationContext());
@@ -74,6 +75,11 @@ public class GenerateSmsOtp extends AppCompatActivity {
                     return;
                 }
 
+                if(TextUtils.isEmpty(iEmail.getText().toString())){
+                    Toast.makeText(getApplicationContext() , "Enter email",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 generateSmsOtp();
 
             }
@@ -88,7 +94,7 @@ public class GenerateSmsOtp extends AppCompatActivity {
 
         final Map<String, Object> postParam = new HashMap<String, Object>();
         postParam.put("msisdn" , iPhoneNum.getText().toString());
-
+        postParam.put("email", iEmail.getText().toString());
 
         helperUtilities.volleyHttpPostRequestV2(postParam, new ResponseCallback() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -105,6 +111,7 @@ public class GenerateSmsOtp extends AppCompatActivity {
 
                         prefManager.setIsResetingPin(true);
                         prefManager.setMSISDN(helperUtilities.formatNumber(iPhoneNum.getText().toString()));
+                        prefManager.setEmail(iEmail.getText().toString());
                         startActivity(new Intent(getApplicationContext(), ResetPassword.class));
                         finish();
 

@@ -38,7 +38,7 @@ public class ResetPassword extends AppCompatActivity {
     private boolean isStillProcessing = false;
     HelperUtilities helperUtilities;
     PrefManager prefManager;
-    EditText  iPhoneNum, iFirstPassword, iLastPassword, iOtp;
+    EditText  iPhoneNum, iFirstPassword, iLastPassword, iOtp, iEmail;
 
 
     @Override
@@ -47,6 +47,7 @@ public class ResetPassword extends AppCompatActivity {
         setContentView(R.layout.activity_reset_password);
 
 
+        iEmail = findViewById(R.id.input_email);
         displayResetPinCodeHeaderText = findViewById(R.id._reset_otp_header);
         iOtp = findViewById(R.id.input_otp);
         iLastPassword = findViewById(R.id.input_second_password);
@@ -59,8 +60,9 @@ public class ResetPassword extends AppCompatActivity {
         toolBarText = findViewById(R.id.toolbar_text);
         backButton = findViewById(R.id.back_btn);
         toolBarText.setText("Set New Pin");
-        displayResetPinCodeHeaderText.setText("Use the otp we sent to "+prefManager.getMSISDN());
-        iOtp.setText(prefManager.getMSISDN());
+        displayResetPinCodeHeaderText.setText("Use the otp we sent to "+prefManager.getEmail());
+        iPhoneNum.setText(prefManager.getMSISDN());
+        iEmail.setText(prefManager.getEmail());
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,6 +78,11 @@ public class ResetPassword extends AppCompatActivity {
 
                 if(isStillProcessing){
                     Toast.makeText(getApplicationContext() , "Please wait",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                if(TextUtils.isEmpty(iEmail.getText().toString())){
+                    Toast.makeText(getApplicationContext() , "Enter email that received otp",Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -123,6 +130,7 @@ public class ResetPassword extends AppCompatActivity {
         postParam.put("msisdn" , iPhoneNum.getText().toString());
         postParam.put("password",iFirstPassword.getText().toString());
         postParam.put("otp",iOtp.getText().toString());
+        postParam.put("email", iEmail.getText().toString());
 
 
         helperUtilities.volleyHttpPostRequestV2(postParam, new ResponseCallback() {

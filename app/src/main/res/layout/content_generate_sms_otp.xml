@@ -40,7 +40,7 @@
                     android:layout_below="@+id/_reset_pin_title_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Enter Phone Number"
+                    android:text="Enter Phone Number(One you created account with)"
                     />
 
                 <RelativeLayout
@@ -67,9 +67,44 @@
                         android:textColorHint="@color/global_hint_text_" />
                 </RelativeLayout>
 
+                <TextView
+                    android:textColor = "?android:textColorPrimary"
+                    android:id="@+id/enter_email_label"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_below="@+id/_msisdn_editext_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email (Where OTP will be sent)"
+                    />
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/enter_email_label"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border_with_small_rounds"
+                    android:id="@+id/_email_editext_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+
+                    <EditText
+                        android:id="@+id/input_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:backgroundTint="@color/color_faint_white"
+                        android:hint="Enter email"
+                        android:inputType="textEmailAddress"
+                        android:textAppearance="@style/hint__"
+                        android:textColorHint="@color/global_hint_text_" />
+                </RelativeLayout>
+
                 <RelativeLayout
                     android:layout_marginTop="20dp"
-                    android:layout_below="@+id/_msisdn_editext_layout"
+                    android:layout_below="@+id/_email_editext_layout"
                     android:clickable="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
